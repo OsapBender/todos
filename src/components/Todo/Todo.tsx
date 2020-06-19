@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import styled from 'styled-components'
 import {StoreContext} from "../../store/context";
+import {Input} from "../Input/Input";
 
 const Container = styled.div`
   position:absolute;
@@ -51,7 +52,7 @@ const Todo: React.FC = () => {
                 <List>
                     <Item>Hey</Item>
                 </List>
-                <input type="text"/>
+                <Input />
                 <div>
                     <button type={"button"}></button>
                     <button type={"button"}></button>
