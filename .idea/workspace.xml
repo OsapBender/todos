@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91671a68-d28b-4afd-8771-6f2bc2be8344" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Input/Input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Todo/Todo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Todo/Todo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/Interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +87,10 @@
       <option name="presentableId" value="Default" />
       <updated>1592466388458</updated>
       <workItem from="1592466390921" duration="10576000" />
-      <workItem from="1592549139643" duration="14285000" />
+      <workItem from="1592549139643" duration="14339000" />
+      <workItem from="1592647509627" duration="3224000" />
+      <workItem from="1592735888820" duration="3168000" />
+      <workItem from="1592847376191" duration="489000" />
     </task>
     <servers />
   </component>
@@ -92,6 +98,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="721" y="168" key="#com.intellij.ide.util.MemberChooser" timestamp="1592650404108">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="168" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592650404108" />
     <state x="507" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592469004498">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -116,6 +126,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="262" y="63" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1592466466365" />
+    <state x="507" y="187" width="906" height="666" key="find.popup" timestamp="1592650088062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="507" y="187" width="906" height="666" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592650088062" />
     <state x="412" y="229" key="run.anything.popup" timestamp="1592468601639">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

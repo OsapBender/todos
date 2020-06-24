@@ -1,10 +1,13 @@
-interface IState {}
+export interface IState {
+    todoList: String[]
+}
 
 export interface IContextProps {
     state: IState;
-    dispatch: ({type}:{type:string}) => void;
+    dispatch: ({type, value}:{type:string, value: string}) => void;
 }
 
 export interface IAction {
     type: string
+    value: string
 }
