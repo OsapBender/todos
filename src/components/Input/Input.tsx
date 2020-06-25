@@ -29,16 +29,13 @@ const InputText = styled.input`
 `;
 
 const Button = styled.button`
-<<<<<<< HEAD
   opacity: ${(props: { isTyping: boolean }) => props.isTyping ? '1' : '0'};
   visibility: ${(props) => props.isTyping ? 'visible' : 'hidden'};
   position: relative;
   min-width: 60px; 
-=======
   position: absolute;
   right: 0;
   width: 60px; 
->>>>>>> dac52fc289f592bcaf518bb6eff2c7fa135d205c
   height: 60px;
   background:#38b570;
   padding: 0;
