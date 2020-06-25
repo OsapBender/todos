@@ -1,5 +1,7 @@
-import React, {useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import styled from "styled-components";
+import {StoreContext} from "../../store/context";
+import {ADD_TODO} from "../../store/actions";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -27,18 +29,27 @@ const InputText = styled.input`
 `;
 
 const Button = styled.button`
+<<<<<<< HEAD
   opacity: ${(props: { isTyping: boolean }) => props.isTyping ? '1' : '0'};
   visibility: ${(props) => props.isTyping ? 'visible' : 'hidden'};
   position: relative;
   min-width: 60px; 
+=======
+  position: absolute;
+  right: 0;
+  width: 60px; 
+>>>>>>> dac52fc289f592bcaf518bb6eff2c7fa135d205c
   height: 60px;
   background:#38b570;
   padding: 0;
   border: none;
   border-radius: 50%;
   outline: none;
-  transform: translateX(-10px);
-  transition: all .2s;
+  transition: all .3s;
+  opacity: ${(props: { isTyping: boolean }) => props.isTyping ? '1' : '0'};
+  visibility: ${(props) => props.isTyping ? 'visible' : 'hidden'};
+  transform: ${(props) => props.isTyping ? 'rotate(0deg) scale(1)' : 'rotate(-45deg) scale(0)'} translateX(-10px);
+  
   
   &:before, &:after {
     content: '';
@@ -65,14 +76,16 @@ const Button = styled.button`
 
 export const Input: React.FC = () => {
     const [isText, setText] = useState('');
-
+    const {dispatch} = useContext(StoreContext);
 
     return (
         <Container>
             <InputText onChange={(e) => {
                 setText(e.target.value)
             }} type={'text'}/>
-            <Button isTyping={!!isText}/>
+            <Button isTyping={!!isText} onClick={() => {
+                dispatch({type: ADD_TODO, value: isText})
+            }}/>
         </Container>
     );
 };
