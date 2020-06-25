@@ -27,10 +27,7 @@ const InputText = styled.input`
 `;
 
 const Button = styled.button`
-  opacity: ${(props: { isTyping: boolean }) => {
-    console.log(props.isTyping)
-    return props.isTyping ? '1' : '0'
-}};
+  opacity: ${(props: { isTyping: boolean }) => props.isTyping ? '1' : '0'};
   visibility: ${(props) => props.isTyping ? 'visible' : 'hidden'};
   position: relative;
   min-width: 60px; 

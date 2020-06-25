@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91671a68-d28b-4afd-8771-6f2bc2be8344" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/src/components/Input/Input.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Todo/Todo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Todo/Todo.tsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +41,13 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+<<<<<<< Updated upstream
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\ivan0\WebstormProjects\todos\node_modules\typescript\lib" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\ichuvashov\Desktop\todolist\node_modules\typescript\lib" />
+>>>>>>> Stashed changes
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -83,8 +92,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592466388458</updated>
+<<<<<<< Updated upstream
       <workItem from="1592466390921" duration="10576000" />
       <workItem from="1592549139643" duration="14285000" />
+=======
+      <workItem from="1592466390921" duration="10903000" />
+      <workItem from="1592802955220" duration="505000" />
+      <workItem from="1592889909613" duration="445000" />
+      <workItem from="1592890363982" duration="2000" />
+      <workItem from="1592902637115" duration="5000" />
+      <workItem from="1592998280466" duration="271000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -92,30 +110,38 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="331" y="81" key="#Custom_Plugin_Repositories" timestamp="1592890221324">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="331" y="81" key="#Custom_Plugin_Repositories/0.0.1680.1010@0.0.1680.1010" timestamp="1592890221324" />
     <state x="507" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592469004498">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="507" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1592469004498" />
-    <state width="1654" height="239" key="GridCell.Tab.0.bottom" timestamp="1592468948228">
+    <state x="560" y="187" key="FileChooserDialogImpl" timestamp="1592890283796">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1654" height="239" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1592468948228" />
-    <state width="1654" height="239" key="GridCell.Tab.0.center" timestamp="1592468948228">
+    <state x="560" y="187" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1592890283796" />
+    <state width="1654" height="239" key="GridCell.Tab.0.bottom" timestamp="1592487875399">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1654" height="239" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1592468948228" />
-    <state width="1654" height="239" key="GridCell.Tab.0.left" timestamp="1592468948227">
+    <state width="1654" height="239" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1592487875399" />
+    <state width="1654" height="239" key="GridCell.Tab.0.center" timestamp="1592487875399">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1654" height="239" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1592468948227" />
-    <state width="1654" height="239" key="GridCell.Tab.0.right" timestamp="1592468948228">
+    <state width="1654" height="239" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1592487875399" />
+    <state width="1654" height="239" key="GridCell.Tab.0.left" timestamp="1592487875398">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1654" height="239" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1592468948228" />
-    <state x="262" y="63" key="SettingsEditor" timestamp="1592466466365">
+    <state width="1654" height="239" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1592487875398" />
+    <state width="1654" height="239" key="GridCell.Tab.0.right" timestamp="1592487875399">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="262" y="63" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1592466466365" />
+    <state width="1654" height="239" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1592487875399" />
+    <state x="262" y="63" key="SettingsEditor" timestamp="1592890352222">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="262" y="63" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1592890352222" />
     <state x="412" y="229" key="run.anything.popup" timestamp="1592468601639">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
