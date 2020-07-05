@@ -1,7 +1,9 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useRef} from "react";
 import styled, {keyframes} from 'styled-components'
 import {StoreContext} from "../../store/context";
 import {Input} from "../Input/Input";
+import {ITodoList} from "../../store/Interface";
+import {CHANGE_COMPLETION} from "../../store/actions";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -28,19 +30,30 @@ const ListWrapper = styled.div`
   height: 100%;
 `;
 
-const Fact = styled.div`
-  position: relative;
-  width: 100%;
-  height: 170px;
-  
-`;
-
 const List = styled.ul`
-  position: absolute;
   display:flex;
   flex-direction: column;
   width: 100%;
-  overflow: visible;
+  height: 230px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+  width: 5px;
+  margin-left: 20px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
 `;
 
 const xTransform = keyframes`
@@ -59,9 +72,12 @@ const xTransform = keyframes`
 
 const Item = styled.li`
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
   padding: 10px;
-  animation: 1s ${xTransform} ;
+  font-size: 18px;
+  animation: .3s ${xTransform} ;
+  
+  p {margin: 0;}
    
   &:not(:first-child) {
     border-top: 2px solid #eaebee;
@@ -70,17 +86,30 @@ const Item = styled.li`
 
 
 const Todo: React.FC = () => {
-    const {state} = useContext(StoreContext);
+    const {state, dispatch} = useContext(StoreContext);
+    const list = useRef<HTMLUListElement>(null);
+    useEffect(() => {
+        if (list && list.current) {
+            list.current.scrollTop = list.current.scrollHeight;
+        }
+    }, [state])
 
     return (
         <Container>
             <h1>Todos</h1>
             <ListWrapper>
-                <Fact>
-                    <List>
-                        {state.todoList.map((item: String, idx) => <Item key={idx}>{item}</Item>)}
-                    </List>
-                </Fact>
+                <List ref={list}>
+                    {state.todoList.map((item: ITodoList) =>
+                        <Item
+                            key={item.id}
+                            onClick={() => {
+                                dispatch({type: CHANGE_COMPLETION, payload: {id: item.id}})
+                            }}
+                        >
+                            <p>{item.value}</p>
+                            {/*{isDone ? <span role="img">✔</span> : false}*/}
+                        </Item>)}
+                </List>
                 <Input/>
                 <div>
                     <button type={"button"}></button>

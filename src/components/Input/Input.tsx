@@ -1,21 +1,23 @@
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import {StoreContext} from "../../store/context";
 import {ADD_TODO} from "../../store/actions";
+import {IContextProps} from "../../store/Interface";
 
 const Container = styled.div`
   box-sizing: border-box;
   display:flex;
   align-items: center;
-  margin: 40px 0;
+  margin: 20px 0;
   width: 100%;
   height: 70px;
 `;
 
 const InputText = styled.input`
+  box-sizing: border-box;
   width: 100%;
   height: 50px;
-  padding: 0 10px;
+  padding: 0 40px 0px 10px;
   border: none;
   border-radius: 5px;
   background:#eaebee;
@@ -73,15 +75,43 @@ const Button = styled.button`
 
 export const Input: React.FC = () => {
     const [isText, setText] = useState('');
-    const {dispatch} = useContext(StoreContext);
+    const [isCooldown, setCooldown] = useState(true);
+    const {state, dispatch}  = useContext(StoreContext);
+    const input = useRef<HTMLInputElement>(null);
+
+    const handleEnter = (evt: KeyboardEvent) => {
+        if (evt.keyCode === 13) {
+            if (isText) return dispatch({
+                type: ADD_TODO,
+                payload: {value: isText, id: state.numberOfCases, isDone: false}
+            });
+
+        }
+    }
+
+    useEffect(() => {
+        if (input && input.current) {
+            input.current.focus()
+        }
+    }, [])
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleEnter);
+        return () => document.removeEventListener('keydown', handleEnter)
+    }, [isText])
+
 
     return (
         <Container>
-            <InputText onChange={(e) => {
+            <InputText ref={input} onChange={(e) => {
                 setText(e.target.value)
             }} type={'text'}/>
             <Button isTyping={!!isText} onClick={() => {
-                dispatch({type: ADD_TODO, value: isText})
+                if (isCooldown) {
+                    dispatch({type: ADD_TODO, payload: {value: isText, id: state.numberOfCases, isDone: false}});
+                    setCooldown(false);
+                }
+                setTimeout(() => setCooldown(true), 300)
             }}/>
         </Container>
     );

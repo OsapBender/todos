@@ -1,13 +1,27 @@
 export interface IState {
-    todoList: String[]
+    todoList: ITodoList[]
+    numberOfCases: number
+}
+
+export interface ITodoList {
+    value: string
+    id: number
+    isDone: boolean
 }
 
 export interface IContextProps {
     state: IState;
-    dispatch: ({type, value}:{type:string, value: string}) => void;
+    dispatch: ({type, payload}: IAddTodo | IDone ) => void;
 }
 
-export interface IAction {
+export interface IAddTodo {
     type: string
-    value: string
+    payload: {value: string, id: number, isDone: boolean}
 }
+
+export interface IDone {
+    type: string
+    payload: {id: number}
+}
+
+
