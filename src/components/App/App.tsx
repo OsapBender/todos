@@ -3,7 +3,6 @@ import Todo from "../Todo/Todo";
 import {StoreContext} from "../../store/context";
 import {initialState, reducer} from "../../store/reducer";
 
-
 const App: React.FC = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     return (

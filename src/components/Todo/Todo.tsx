@@ -72,12 +72,37 @@ const xTransform = keyframes`
 
 const Item = styled.li`
   box-sizing: border-box;
+  display:flex;
+  justify-content: space-between;
+  position:relative;
   width: 300px;
   padding: 10px;
   font-size: 18px;
   animation: .3s ${xTransform} ;
   
-  p {margin: 0;}
+  p {
+    position:relative;
+    display: inline-block;
+    margin: 0;
+    color: ${(props : {isDone: boolean}) => props.isDone ? '#aeaeaf' : '#000'};
+    word-break: break-word;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        opacity: ${(props: { isDone: boolean }) => props.isDone ? '1' : '0'};
+        visibility: ${(props: { isDone: boolean }) => props.isDone ? 'visible' : 'hidden'};
+        width: 120%;
+        height: 2px;
+        background:#aeaeaf;
+        top: 50%;
+        left: -10%;
+        transform-origin: left;
+        transform: translate(0, -50%) scaleX(${(props: { isDone: boolean }) => props.isDone ? '1' : '0'});
+        transition:all .2s; 
+   }
+  }
+  
    
   &:not(:first-child) {
     border-top: 2px solid #eaebee;
@@ -102,12 +127,11 @@ const Todo: React.FC = () => {
                     {state.todoList.map((item: ITodoList) =>
                         <Item
                             key={item.id}
-                            onClick={() => {
-                                dispatch({type: CHANGE_COMPLETION, payload: {id: item.id}})
-                            }}
+                            isDone={item.isDone}
+                            onClick={() => dispatch({type: CHANGE_COMPLETION, payload: {id: item.id, value: item.value, isDone: item.isDone}})}
                         >
                             <p>{item.value}</p>
-                            {/*{isDone ? <span role="img">✔</span> : false}*/}
+                            {item.isDone ? <span role="img">✅</span> : false}
                         </Item>)}
                 </List>
                 <Input/>

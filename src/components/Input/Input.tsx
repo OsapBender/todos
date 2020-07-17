@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import {StoreContext} from "../../store/context";
 import {ADD_TODO} from "../../store/actions";
-import {IContextProps} from "../../store/Interface";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -33,7 +32,6 @@ const InputText = styled.input`
 const Button = styled.button`
   opacity: ${(props: { isTyping: boolean }) => props.isTyping ? '1' : '0'};
   visibility: ${(props) => props.isTyping ? 'visible' : 'hidden'};
-  position: relative;
   min-width: 60px; 
   position: absolute;
   right: 0;
@@ -79,27 +77,11 @@ export const Input: React.FC = () => {
     const {state, dispatch}  = useContext(StoreContext);
     const input = useRef<HTMLInputElement>(null);
 
-    const handleEnter = (evt: KeyboardEvent) => {
-        if (evt.keyCode === 13) {
-            if (isText) return dispatch({
-                type: ADD_TODO,
-                payload: {value: isText, id: state.numberOfCases, isDone: false}
-            });
-
-        }
-    }
-
     useEffect(() => {
         if (input && input.current) {
             input.current.focus()
         }
     }, [])
-
-    useEffect(() => {
-        document.addEventListener('keydown', handleEnter);
-        return () => document.removeEventListener('keydown', handleEnter)
-    }, [isText])
-
 
     return (
         <Container>
