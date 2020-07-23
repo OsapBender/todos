@@ -1,9 +1,10 @@
-import React, {useContext, useEffect, useRef} from "react";
+import React, {ReactNode, useContext, useEffect, useRef} from "react";
 import styled, {keyframes} from 'styled-components'
 import {StoreContext} from "../../store/context";
 import {Input} from "../Input/Input";
 import {ITodoList} from "../../store/Interface";
 import {CHANGE_COMPLETION} from "../../store/actions";
+import {log} from "util";
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -84,7 +85,7 @@ const Item = styled.li`
     position:relative;
     display: inline-block;
     margin: 0;
-    color: ${(props : {isDone: boolean}) => props.isDone ? '#aeaeaf' : '#000'};
+    color: ${(props: { isDone: boolean }) => props.isDone ? '#aeaeaf' : '#000'};
     word-break: break-word;
     
     &:after {
@@ -112,12 +113,7 @@ const Item = styled.li`
 
 const Todo: React.FC = () => {
     const {state, dispatch} = useContext(StoreContext);
-    const list = useRef<HTMLUListElement>(null);
-    useEffect(() => {
-        if (list && list.current) {
-            list.current.scrollTop = list.current.scrollHeight;
-        }
-    }, [state])
+    const list = useRef(null);
 
     return (
         <Container>
@@ -128,13 +124,16 @@ const Todo: React.FC = () => {
                         <Item
                             key={item.id}
                             isDone={item.isDone}
-                            onClick={() => dispatch({type: CHANGE_COMPLETION, payload: {id: item.id, value: item.value, isDone: item.isDone}})}
+                            onClick={() => dispatch({
+                                type: CHANGE_COMPLETION,
+                                payload: {id: item.id, value: item.value, isDone: item.isDone}
+                            })}
                         >
                             <p>{item.value}</p>
                             {item.isDone ? <span role="img">✅</span> : false}
                         </Item>)}
                 </List>
-                <Input/>
+                <Input { ...list }/>
                 <div>
                     <button type={"button"}></button>
                     <button type={"button"}></button>

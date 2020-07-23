@@ -3,7 +3,6 @@ import {ADD_TODO, CHANGE_COMPLETION} from "./actions";
 
 export const initialState: IState = {todoList: [], numberOfCases: 0};
 export const reducer = (state = initialState, action: IAddTodo) => {
-    console.log(action.type)
     switch (action.type) {
         case ADD_TODO: {
             const newState = [...state.todoList,

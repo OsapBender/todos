@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, {ReactNode, useContext, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import {StoreContext} from "../../store/context";
 import {ADD_TODO} from "../../store/actions";
@@ -71,11 +71,18 @@ const Button = styled.button`
   }
 `;
 
-export const Input: React.FC = () => {
+export const Input = ({ current } : { current: HTMLUListElement | null}) => {
+    console.log(current)
     const [isText, setText] = useState('');
     const [isCooldown, setCooldown] = useState(true);
-    const {state, dispatch}  = useContext(StoreContext);
+    const {state, dispatch} = useContext(StoreContext);
     const input = useRef<HTMLInputElement>(null);
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, current: HTMLUListElement | null): void => {
+        if (current) {
+            current.scrollTop = current.scrollHeight;
+        }
+    }
 
     useEffect(() => {
         if (input && input.current) {
@@ -88,10 +95,11 @@ export const Input: React.FC = () => {
             <InputText ref={input} onChange={(e) => {
                 setText(e.target.value)
             }} type={'text'}/>
-            <Button isTyping={!!isText} onClick={() => {
+            <Button isTyping={!!isText} onClick={(e) => {
                 if (isCooldown) {
                     dispatch({type: ADD_TODO, payload: {value: isText, id: state.numberOfCases, isDone: false}});
                     setCooldown(false);
+                    setTimeout(() => handleClick(e, current), 0);
                 }
                 setTimeout(() => setCooldown(true), 300)
             }}/>

@@ -11,7 +11,6 @@ const App: React.FC = () => {
                 <Todo/>
             </div>
         </StoreContext.Provider>
-
     );
 }
 
